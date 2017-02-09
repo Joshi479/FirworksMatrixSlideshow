@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Happy Birthday</title>
+    <style>
+        body {
+            background: #000;
+            margin: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+    </style>
+
+</head>
+<body>
+
+    <img id="imageDisp" hidden="hidden" />
+    <canvas id="fwCanvas">
+        <div style="height:350px; background-color:red;">
+
+        </div>
+    </canvas>
+
+
+
+    <script>
+        var t = 0;
+        var imageCnt = 0;
+        var images = [];
+
+        for (var i = 1; i < 47; i++) {
+            //var image = new Image();
+            var image = "img/" + i + ".jpg";
+            //image.width = '350';
+            //image.height = '275';
+            images.push(image);
+        }
+        var c = document.getElementById("fwCanvas");
+        var twod = c.getContext("2d");
+        c.width = window.innerWidth;
+        c.height = window.innerHeight;
+
+
+        window.addEventListener('resize', function () {
+            c.width = window.innerWidth;
+            c.height = window.innerHeight;
+        }, false);
+
+
+        function draw() {
+            twod.globalCompositeOperation = 'source-over';
+            twod.fillStyle = 'hsla(0,0%,0%,.1)';;
+            twod.fillRect(0, 0, c.width, c.height);
+            var f, i, j, r;
+            f = Math.sin(t) * 2 * Math.PI;
+            for (i = 0; i < 400; ++i) {
+                r = 400 * Math.sin(i * f);
+                twod.globalCompositeOperation = '';
+                twod.fillStyle = 'hsla(' + i + 12 + ',100%,70%,1)';
+                twod.beginPath();
+                twod.arc(Math.sin(i) * r + (c.width / 2), Math.cos(i) * r + (c.height / 2), 1.5, 0, Math.PI * 2);
+                twod.fill();
+            }
+            t += 0.000005;
+            return t %= 2 * Math.PI;
+        }
+
+
+        var matrix = "HAPPYBIRTHDAYSOWMYA";
+        matrix = matrix.split('');
+        var fontSize = 10;
+        var col = c.width / fontSize;
+        var drops = [];
+        for (var x = 0; x < col; x++)
+            drops[x] = 1;
+
+        function createMatrix() {
+            twod.fillStyle = 'rgba(0,0,0,0.04)';
+            twod.fillRect(0, 0, c.width, c.height);
+            twod.fillStyle = '#0F0';
+            twod.font = fontSize + 'px arial';
+
+            for (var i = 0; i < drops.length; i++) {
+                var text = matrix[Math.floor(Math.random()*matrix.length)];
+                twod.fillText(text, i * fontSize, drops[i] * fontSize);
+                if (drops[i] * fontSize > c.height && Math.random() > 0.975)
+                    drops[i] = 0;
+                drops[i]++;
+            }
+        }
+
+        function ImageDisplay()
+        {
+            var img = document.getElementById('imageDisp');
+            img.setAttribute('src', images[imageCnt]);
+            img.setAttribute('width', c.width - 310);
+            img.setAttribute('height', c.height - 310);
+            twod.drawImage(img, 550, 200);
+            imageCnt++;
+            if (imageCnt > images.length - 1)
+                imageCnt = 0;
+        }
+        //
+        var fps = 8;
+        var now;
+        var then = Date.now();
+        var interval = 1000 / fps;
+        var delta;
+
+        function run() {
+            window.requestAnimationFrame(run);
+            now = Date.now();
+            delta = now - then;
+            draw();
+            createMatrix();
+            if (delta > interval)
+            {
+                then = now - (delta % interval);
+                ImageDisplay();
+            }
+        }
+        run();
+
+
+    </script>
+</body>
+</html>
+

@@ -43,6 +43,34 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -67,6 +95,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -75,6 +106,49 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FireWorks.html" />
+    <Content Include="img\1.jpg" />
+    <Content Include="img\10.JPG" />
+    <Content Include="img\11.JPG" />
+    <Content Include="img\12.JPG" />
+    <Content Include="img\13.JPG" />
+    <Content Include="img\14.JPG" />
+    <Content Include="img\15.JPG" />
+    <Content Include="img\16.JPG" />
+    <Content Include="img\17.JPG" />
+    <Content Include="img\18.JPG" />
+    <Content Include="img\19.JPG" />
+    <Content Include="img\2.JPG" />
+    <Content Include="img\20.JPG" />
+    <Content Include="img\21.JPG" />
+    <Content Include="img\22.JPG" />
+    <Content Include="img\23.JPG" />
+    <Content Include="img\24.JPG" />
+    <Content Include="img\25.JPG" />
+    <Content Include="img\26.JPG" />
+    <Content Include="img\27.JPG" />
+    <Content Include="img\28.JPG" />
+    <Content Include="img\29.JPG" />
+    <Content Include="img\3.JPG" />
+    <Content Include="img\30.JPG" />
+    <Content Include="img\31.JPG" />
+    <Content Include="img\32.JPG" />
+    <Content Include="img\33.jpg" />
+    <Content Include="img\34.JPG" />
+    <Content Include="img\35.JPG" />
+    <Content Include="img\36.JPG" />
+    <Content Include="img\37.JPG" />
+    <Content Include="img\38.JPG" />
+    <Content Include="img\39.JPG" />
+    <Content Include="img\4.JPG" />
+    <Content Include="img\40.JPG" />
+    <Content Include="img\41.jpg" />
+    <Content Include="img\5.JPG" />
+    <Content Include="img\6.JPG" />
+    <Content Include="img\7.JPG" />
+    <Content Include="img\8.JPG" />
+    <Content Include="img\9.JPG" />
+    <Content Include="img\sowmya.mp4" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
